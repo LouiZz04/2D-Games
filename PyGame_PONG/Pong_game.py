@@ -76,6 +76,7 @@ def main():
 
     # diretion of the ball in polar then changing to cartisian
     angle = random.randint(-45, 45)
+    angle = angle+180 if random.randint(0,1)==1 else angle
     angle = angle if angle>=0 else 360 - angle # to keep my angle positive 
     radius = height/30
 
@@ -132,6 +133,7 @@ def main():
                 nb_of_bounces=0
 
                 angle = random.randint(-45, 45)
+                angle = angle+180 if random.randint(0,1)==1 else angle
                 angle = angle if angle>=0 else 360 - angle
 
                 p1font = font.render(f"{p1_score}", False, grey)
@@ -140,7 +142,6 @@ def main():
 
 
         elif game == gamemode.Playing:
-        
             # moving players 1 and 2
             p1_prev, p2_prev = p1_position, p2_position
             p1_position , p2_position = movingplayers(keys, p1_position, p2_position, height, dt, rate)
@@ -162,30 +163,30 @@ def main():
 
 
 
-        if bounce:
-            nb_of_bounces+=1
-            if ball_position.x>width/2: 
-                p2_score+=1
-                p2font= font.render(f"{p2_score}", False, grey)
+            if bounce:
+                nb_of_bounces+=1
+                if ball_position.x>width/2: 
+                    p2_score+=1
+                    p2font= font.render(f"{p2_score}", False, grey)
 
-                if p2_prev > p2_position: angle = angle + 20 if angle + 20 < 225 else 225 # upwards
-                elif p2_prev < p2_position: angle = angle - 20 if angle -20 > 135 else 135 # downwards
+                    if p2_prev > p2_position: angle = angle + 20 if angle + 20 < 225 else 225 # upwards
+                    elif p2_prev < p2_position: angle = angle - 20 if angle -20 > 135 else 135 # downwards
 
-            else: 
-                p1_score+=1
-                p1font= font.render(f"{p1_score}", False, grey)
+                else: 
+                    p1_score+=1
+                    p1font= font.render(f"{p1_score}", False, grey)
 
-                if p1_prev > p1_position: 
-                    angle = angle - 20
-                if angle < 0: 
-                    angle = 360 - angle
-                    angle = angle if angle > 315 else 315
-                elif p1_prev < p2_position: 
-                    angle = angle + 20 
-                if angle >= 360: 
-                    angle = angle - 360
-                    angle = angle if angle < 45 else 45
-                # different approach fromn p2 since the angle changes sometimes from + to -
+                    if p1_prev > p1_position: 
+                        angle = angle - 20
+                    if angle < 0: 
+                        angle = 360 - angle
+                        angle = angle if angle > 315 else 315
+                    elif p1_prev < p2_position: 
+                        angle = angle + 20 
+                    if angle >= 360: 
+                        angle = angle - 360
+                        angle = angle if angle < 45 else 45
+                    # different approach fromn p2 since the angle changes sometimes from + to -
 
 
             
