@@ -11,10 +11,12 @@ The agent plays against itself for n rounds, then the Human gets to play against
 
 1. Clone repo
 
-3. Install python compiler if not already installed using your package manager. Example for Fedora run `sudo dnf install python3`
+2. Install python compiler if not already installed using your package manager. Example for Fedora run `sudo dnf install python3`
 
-2. Install pygame library, example using pip `pip3 install pygame`
+3. Install pygame library, example using pip `pip3 install pygame`
 
-3. run `python3 play.py`
+5. Change directory `cd ./pong\ with\ Q-Learning/`
 
-Modify the training sessions `n` to your desire in /play.py line 3:`train(n)`
+5. run `python3 play.py`
+
+Modify the training sessions `n` to your desire in ./play.py line 3

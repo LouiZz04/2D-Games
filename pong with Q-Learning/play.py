@@ -1,4 +1,5 @@
 from pong import train, play
 
-ai = train(100)
+n = 100 # train n times
+ai = train(n)
 play(ai)
