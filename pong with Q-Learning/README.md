@@ -1,6 +1,11 @@
 # Pong with Q-Learning
 
-Train agent by playing against itself for n rounds, then play against it.
+Train agent using state - action method, where state is 1, 0 or -1 representing if the player is above, same level or below the ball's y-coordinate. Action represents a string, either moving "UP", "DOWN", or "NOTHING".
+
+For each `q[state, action]` a q-value or reward is saved for this event.
+
+The agent plays against itself for n rounds, then the Human gets to play against it.
+
 
 ## Installation
 
@@ -12,4 +17,4 @@ Train agent by playing against itself for n rounds, then play against it.
 
 3. run `python3 play.py`
 
-Modify the training sessions `n` to your desire in /play.py, `train(n)`
+Modify the training sessions `n` to your desire in /play.py line 3:`train(n)`
