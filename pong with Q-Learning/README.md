@@ -15,7 +15,7 @@ The agent plays against itself for n rounds, then the Human gets to play against
 
 3. Install pygame library, example using pip `pip3 install pygame`
 
-5. Change directory `cd ./pong\ with\ Q-Learning/`
+4. Change directory `cd ./2D-Games/pong\ with\ Q-Learning/`
 
 5. run `python3 play.py`
 
